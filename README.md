@@ -8,6 +8,10 @@ Currency Crusher is a real-time currency conversion tool with a React frontend a
 - Rate limiting to prevent abuse
 - CORS enabled for frontend-backend communication
 
+## Main page
+
+![App Screenshot](https://raw.githubusercontent.com/opansida/currency-crusher/c264e6ee3a0fff3abe3adb02b0509b88e5b69646/image/mainpage.png)
+
 ## Tech Stack
 
 - **Frontend**: React
@@ -45,4 +49,6 @@ Create a .env file in the root directory with:
     node --watch app//Backend
     npm run dev//frontend
 
-## Image
+
+
+
