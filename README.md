@@ -23,35 +23,26 @@ Currency Crusher is a real-time currency conversion tool with a React frontend a
    cd currency-crusher
 
 2. **Install Dependencies**
-
    ```bash
-//Install backend dependencies
-cd backend
-
-npm init --yes
-
-npm i express axios cors express-rate-limit dotenv
-
-node --watch app
-
-//Navigate to frontend and install dependencies
-cd frontend
-
-npm create vite@latest
-
-npm i axios
+   npm init --yes//Frontend
+   npm i express axios cors express-rate-limit dotenv
+ 
+   npm create vite@latest//Backend
+   npm i axios
 
 3. **Configure Environment Variables**
 
 Create a .env file in the root directory with:
 
- ```bash
-PORT=3000
-EXCHANGE_RATE_API_KEY=your-exchange-rate-api-key
+
+      PORT=3000
+      EXCHANGE_RATE_API_KEY=your-exchange-rate-api-key
 
 
 ## Running the Application
-Backend
- ```bash
 
-frontend
+
+    node --watch app//Backend
+    npm run dev//frontend
+
+## Image
