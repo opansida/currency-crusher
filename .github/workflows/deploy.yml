@@ -11,17 +11,24 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  
+      uses: actions/checkout@v3  # 仍然使用 v3
+
     - name: Setup Node.js
-      uses: actions/setup-node@v3  
+      uses: actions/setup-node@v3  # 将 Node.js 版本升级到 20
       with:
-        node-version: '16'
+        node-version: '20'  # 使用 Node.js 20 以符合未来的 GitHub Actions 政策
 
     - name: Install dependencies
       run: npm install
 
     - name: Build project
       run: npm run build
+
+    - name: Display current directory
+      run: ls -alh  # 列出当前目录内容，帮助调试
+
+    - name: Display AWS CLI version
+      run: aws --version  # 查看 AWS CLI 版本，确保 AWS CLI 正常安装
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -31,8 +38,8 @@ jobs:
         aws-region: eu-west-1
 
     - name: Sync files to S3
-      run: |
-        aws s3 sync ./build s3://currency-crusher-frontend --delete
-      continue-on-error: false
+      run: aws s3 sync ./build s3://currency-crusher-frontend --delete
+      continue-on-error: false  # 确保遇到错误时不中断运行
+
 
 
